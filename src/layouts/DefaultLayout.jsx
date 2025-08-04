@@ -29,7 +29,7 @@ export default function DefaultLayout() {
 
             </main>
 
-            <footer className="bg-black text-white py-3 mt-auto">
+            <footer className="bg-black text-white py-4">
 
                 <div className="container">
 

@@ -5,7 +5,7 @@ export default function MovieDetails( { titleIcon, titleText } ) {
         <section>
 
             <h2 className="pb-3">
-                <i className={titleIcon}></i>
+                <i className={`${titleIcon} pe-2`}></i>
                 <span>{titleText}</span>
             </h2>
 

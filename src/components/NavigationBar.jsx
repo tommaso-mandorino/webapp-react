@@ -10,9 +10,9 @@ export default function NavigatioBar() {
 
                 <NavLink className="navbar-brand d-flex align-items-center fw-bold text-white fs-3" to="/">
 
-                    <img src="/favicon.png" alt="React Web App logo" width="60" className="d-inline-block align-text-top pe-1" />
+                    <img src="/favicon.png" alt="React Web App logo" width="60" className="d-inline-block align-text-top pe-2" />
 
-                    <span>React Web App</span>
+                    <span>Movies</span>
 
                 </NavLink>
 
@@ -30,9 +30,9 @@ export default function NavigatioBar() {
 
                             <NavLink className={ ( { isActive } ) =>  isActive ? `nav-link fw-bold text-info` : `nav-link fw-bold text-white` } to="/">
 
-                                <i className="bi bi-house-door-fill"></i>
+                                <i className="bi bi-house-door-fill pe-2"></i>
 
-                                <span> Home</span>
+                                <span>Home</span>
 
                             </NavLink>
 
@@ -42,9 +42,9 @@ export default function NavigatioBar() {
 
                             <NavLink className={ ( { isActive } ) => isActive ? `nav-link fw-bold text-info` : `nav-link fw-bold text-white` } to="/about">
 
-                                <i className="bi bi-building-fill"></i>
+                                <i className="bi bi-building-fill pe-2"></i>
 
-                                <span> About</span>
+                                <span>About</span>
 
                             </NavLink>
 
