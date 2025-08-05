@@ -1,10 +1,10 @@
-import { useState } from 'react';
-
 import useMovies from '../hooks/useMovies.js';
 
-export default function MovieList( { titleIcon, titleText } ) {
+import MovieCard from './MovieCard.jsx';
 
-    const { movies, movieCoverUrls } = useMovies();
+export default function MovieList({ titleIcon, titleText }) {
+
+    const movies = useMovies();
 
     return (
 
@@ -25,23 +25,7 @@ export default function MovieList( { titleIcon, titleText } ) {
 
                             <div key={`movie-${movie.id}`} className="col">
 
-                                <div className="card h-100">
-
-                                    <img className="card-img-top" src={`${movieCoverUrls}/${movie.image}`} alt={`${movie.title} cover`} />
-
-                                    <div className="card-body">
-
-                                        <span className="fs-6 text-muted">{movie.release_year} - {movie.genre}</span>
-
-                                        <h5 className="card-title my-1">{movie.title}</h5>
-
-                                        <span className="fs-6 fst-italic text-muted">{movie.director}</span>
-
-                                        <p className="card-text mt-2">{movie.abstract}</p>
-
-                                    </div>
-
-                                </div>
+                                <MovieCard movie={movie} />
 
                             </div>
 

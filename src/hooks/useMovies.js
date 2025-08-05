@@ -2,38 +2,26 @@ import { useState, useEffect } from 'react';
 
 import fetchData from '../api/fetchData.js';
 
-const moviesEndpoints = {
-    moviesData: 'http://localhost:3000/api/movies',
-    movieCoverUrls: 'http://localhost:3000/images/movie-covers'
-}
+const moviesEndpoint = `${import.meta.env.VITE_SERVER_HOST}:${import.meta.env.VITE_SERVER_PORT}/api/movies`;
 
-
-
-export default function useMovie() {
+export default function useMovie(movieId) {
 
     const [movies, setMovies] = useState(null);
+    const [movie, setMovie] = useState(null);
 
     useEffect(() => {
 
-        fetchData(moviesEndpoints.moviesData)
-            
-            .then(fetchedResults => {
-
-                setMovies(fetchedResults);
-
-            })
-
-            .catch(error => {
-
-                console.error(error);
-
-            });
+        if (!movieId) {
+            fetchData(moviesEndpoint)
+                .then(fetchedMovies => setMovies(fetchedMovies))
+                .catch(error => console.error(error));
+        } else {
+            fetchData(`${moviesEndpoint}/${movieId}`)
+                .then(fetchedMovie => setMovie(fetchedMovie))
+                .catch(error => console.error(error));
+        }
 
     }, []);
 
-    return {
-        movies,
-        movieCoverUrls: moviesEndpoints.movieCoverUrls
-    };
-
+    return !movieId ? movies : movie;
 }

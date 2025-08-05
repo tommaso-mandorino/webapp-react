@@ -42,7 +42,7 @@ export default function NavigatioBar() {
 
                             <NavLink className={ ( { isActive } ) => isActive ? `nav-link fw-bold text-info` : `nav-link fw-bold text-white` } to="/about">
 
-                                <i className="bi bi-building-fill pe-2"></i>
+                                <i className="bi bi-info-square-fill pe-2"></i>
 
                                 <span>About</span>
 
