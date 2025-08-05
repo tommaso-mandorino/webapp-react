@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom';
 
+import Title from '../components/Title.jsx';
+
 export default function AboutPage() {
 
     return (
 
         <section>
 
-            <h2 className="pb-3">
-                <i className="bi bi-info-square-fill pe-2"></i>
-                <span>About</span>
-            </h2>
+            <Title icon="bi bi-info-square-fill" text="About" />
 
             <div className="pt-5 d-lg-flex">
 

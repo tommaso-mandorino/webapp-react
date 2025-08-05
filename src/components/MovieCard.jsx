@@ -10,7 +10,7 @@ export default function MovieCard({ movie }) {
 
         return (
 
-            <div className={movieId ? "card h-100 w-50 mx-auto" : "card h-100"}>
+            <div className={movieId ? "card h-100 d-flex flex-row" : "card h-100"}>
 
                 {
                     (!movieId)
@@ -19,7 +19,7 @@ export default function MovieCard({ movie }) {
                             <img className="card-img-top" src={`${movieCoversPath}/${movie.image}`} alt={`${movie.title} cover`} />
                         </Link>
                         :
-                        <img className="card-img-top" src={`${movieCoversPath}/${movie.image}`} alt={`${movie.title} cover`} />
+                        <img className="card-img-top w-25" src={`${movieCoversPath}/${movie.image}`} alt={`${movie.title} cover`} />
                 }
 
                 <div className="card-body">

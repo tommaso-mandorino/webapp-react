@@ -2,8 +2,9 @@ import { useParams } from 'react-router-dom';
 
 import useMovies from '../hooks/useMovies.js';
 
+import Title from '../components/Title.jsx';
 import MovieCard from '../components/MovieCard.jsx';
-import MovieReviews from '../components/MovieReviews.jsx';
+import MovieReviewsSection from '../components/MovieReviewsSection.jsx';
 
 export default function MovieDetailsPage() {
 
@@ -13,16 +14,13 @@ export default function MovieDetailsPage() {
 
         <section>
 
-            <h2 className="pb-3">
-                <i className="bi bi-info-square pe-2"></i>
-                <span>Movie details</span>
-            </h2>
+            <Title icon="bi bi-info-square" text="Movie details" />
 
             <MovieCard movie={movie} />
 
-            <MovieReviews movie={movie} />
+            <MovieReviewsSection movie={movie} />
 
-        </section >
+        </section>
 
     );
 

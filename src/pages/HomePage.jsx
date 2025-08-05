@@ -4,7 +4,7 @@ export default function HomePage() {
 
     return (
 
-        <MovieList titleIcon="bi bi-film" titleText="Our movies" />
+        <MovieList />
 
     );
 
